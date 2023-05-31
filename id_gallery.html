@@ -6,31 +6,47 @@
 // 모든 지역변수의 앞글자는 소문자
 // 모든 함수의 앞글자는 $
 // 사진은 레파지토리에 올려서 링크걸면 바로 보인다.
+    var Show = true
+
+    function $showon(){
+        if(Show){
+            document.getElementById("gall_window").style.display = "block"
+        } else { document.getElementById("gall_window").style.display = "block" }
+    }
+
 </script>
-<title>Industrial Designer Choi-Jaeho</title>
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-<style>@import url("style_id.css");</style>
+    <title>Industrial Designer Choi-Jaeho</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <style>@import url("style_index.css");</style>
 </head>
+<body>
 
 <body>
-<header>
-<a href = "https://hoishere7.github.io/index">index</a>
-<a href = "https://hoishere7.github.io/id_info">back</a>
-<table border="0">
-<tr>
-<td><a href="https://www.instagram.com/jaeho.id/" title="Instagram Adress">
-<img src="img/Instagram.png" id="TN">instagram</a></td>
-<td><a href="" title="Twitter Adress">
-<img src="img/twitter.png" id="TN">twitter</a></td></tr>
-</table>
-</header>
+    <header class="id">
+        <a href = "https://hoishere7.github.io/index">Back</a>
+            <table border="0" style="font-size: 12px; float:right;">
+            <tr>
+            <td><a href="https://www.instagram.com/jaeho.id/?hl=ko" title="Instagram Adress">
+            <img id="header" src="img/Instagram.png"> Instagram</a></td>
+            </tr>
+            </table>
+    </header>
 
-<div id="show">
-    사진 플리퍼
+<h2 style="text-align: center;">CONTENTS</h2>
+
+<div class="gall">
+    여기에 사진이 들어갑니다.
+</div>
+<div class="gall">
+    여기에 사진이 들어갑니다.
+</div>
+<div class="gall">
+    <img src="" onclick="$showon()">
+    여기에 사진이 들어갑니다.
 </div>
 
-<div id="des">
-    작품 설명
+<div id="gall_window">
+    팝업 윈도우
 </div>
 
 <div>
@@ -42,7 +58,8 @@
 </div>
 
 <footer>
-contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com
+contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com / Copyright 2023. Choi-Jaeho. all pictures cannot
+be copied without permission.
 </footer>
 </body>
 

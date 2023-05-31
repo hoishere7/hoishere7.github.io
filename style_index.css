@@ -1,47 +1,109 @@
 html, body {
+	background-color: #333333;
 	height: 100%;
 }
 
-div {
-	width:50%;
-	height:90%;
-	text-align: center;
-}
+	body.id {
+		background-color: azure;
+	}
 
-div#left {
-	float:left;
-}
+	body.da {
+		background-color: beige;
+	}
 
-div#right {
-	float:right;
-}
 
 header {
 	width : 100%;
 	height:4%;
-	border-bottom-style : dotted;
-	border-bottom-width : 1px;	
+	background-color : black;	
+	font-size: 12px;
 }
+
+	header.id {
+		background-color: azure;
+	}
+
+	header.da {
+		background-color: beige;
+	}
+
+img#header {
+	width:12px;
+	height: 12px;
+}
+
+div {
+	outline: 2px solid blue;
+	text-align: center;
+	background-color: brown;
+}
+
+	div.index_left {
+		width:50%;
+		height:90%;
+		float:left;
+		margin: 0 auto;
+	}
+
+	div.index_right {
+		width:50%;
+		height:90%;
+		float:right;
+		margin: 0 auto;
+	}
+
+	div.main {
+		width:100%;
+		height:90%;
+	}
+
+	div.gall{
+		width:20%;
+		height:auto;
+	}
+
+		.gall:hover{
+			box-shadow: black;
+		}
+
+	div#gall_window{
+		width:90%;
+		position: fixed;
+		justify-content: center;
+		box-shadow: rgba(50, 50, 50, 0.8);
+		display:none;
+	}	
+		div#flipper{
+			width:60%;
+			justify-content: center;
+			box-shadow: rgba(50, 50, 50, 0.8);
+			display:none;
+		}	
 
 footer {
 	width:100%;
 	height:4%;
-	padding-top : 10px;
-	padding-bottom : 10px;
-	padding-left: 10px;
 	clear:both;
-	
-	text-align: center;
+	text-align: right;
 	font-size: 12px;
 	color : grey;
-	border-radius : 5px;
-	background : black;
+	background-color : black;
 }
-
-#change_me:hover {
-text-shadow:0px 0px 5px white;
-}
-		
+	
 a {
 	color : black;
+	font-style: none;
+	text-decoration: none;
 }
+
+	a.index:hover{
+		color : white;
+	}
+
+	a.id:hover{
+		color : white;
+	}
+
+	a.da.hover{
+		color : white;
+	}
