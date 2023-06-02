@@ -1,31 +1,19 @@
 html, body {
-	background-color: #333333;
-	height: 100%;
+	background-color: #222222;
+	font-family: 'Malgun Gothic';
+	margin: 0px;
+	color:gray
 }
 
-	body.id {
-		background-color: azure;
-	}
-
-	body.da {
-		background-color: beige;
-	}
-
-
 header {
+	position:fixed;
+	display: block;
 	width : 100%;
 	height:4%;
 	background-color : black;	
+	color:gray;
 	font-size: 12px;
 }
-
-	header.id {
-		background-color: azure;
-	}
-
-	header.da {
-		background-color: beige;
-	}
 
 img#header {
 	width:12px;
@@ -33,9 +21,9 @@ img#header {
 }
 
 div {
-	outline: 2px solid blue;
+	outline: 2px solid darkred;
 	text-align: center;
-	background-color: brown;
+	background-color: lightgray;
 }
 
 	div.index_left {
@@ -58,27 +46,59 @@ div {
 	}
 
 	div.gall{
-		width:20%;
-		height:auto;
+		display: inline-block;
+		width:400px;
+		height:400px;
+		margin: 20px;
+		border-radius: 20px;
 	}
 
-		.gall:hover{
-			box-shadow: black;
+		.fadedinfo{
+			width:400px;
+			height:400px;
+			border-radius: 20px;
+			opacity: 0;
+			color:white;
+			transition: all ease 0.2s;
+			position: absolute;
+			background: rgba(0, 0, 0, 0.7);
 		}
+		.gall:hover .fadedinfo{
+			opacity: 1;
+		}
+		img.gallimage{
+			object-fit: cover;
+			width: 400px;
+			height: 400px;
+			border-radius: 20px;
+		}
+		
 
-	div#gall_window{
-		width:90%;
+	div#gallerywindow{
 		position: fixed;
-		justify-content: center;
-		box-shadow: rgba(50, 50, 50, 0.8);
-		display:none;
+		width:100%;
+		height:100%;
+		margin: 30px auto;
+		transition: all ease 0.2s;
+		opacity: 0;
+		background-color: rgba(0, 0, 0, 0.5);
 	}	
-		div#flipper{
-			width:60%;
-			justify-content: center;
-			box-shadow: rgba(50, 50, 50, 0.8);
-			display:none;
+		div#imagewindow{
+			width:80%;
+			height:70%;
+			border-radius: 10px;
+			outline:none;
+			margin:100px auto;
+			background-color: white;
 		}	
+
+		iframe {
+			width:100%;
+			height:100%;
+			border-radius: 10px;
+			border:none;
+		}
+		
 
 footer {
 	width:100%;
@@ -91,19 +111,18 @@ footer {
 }
 	
 a {
-	color : black;
+	color : darkred;
 	font-style: none;
 	text-decoration: none;
 }
 
-	a.index:hover{
+	a:hover{
 		color : white;
 	}
 
-	a.id:hover{
-		color : white;
-	}
-
-	a.da.hover{
-		color : white;
-	}
+button#off{
+	width: 50px;
+	height: 50px;
+	float:right;
+	margin: 30px;
+}

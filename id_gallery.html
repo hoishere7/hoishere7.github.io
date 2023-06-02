@@ -2,64 +2,102 @@
 <html>
 <head>
 <script>
-// 모든 전역변수의 앞글자는 대문자
-// 모든 지역변수의 앞글자는 소문자
-// 모든 함수의 앞글자는 $
 // 사진은 레파지토리에 올려서 링크걸면 바로 보인다.
-    var Show = true
+    
+    document.oncontextmenu = donotcopy;
 
-    function $showon(){
-        if(Show){
-            document.getElementById("gall_window").style.display = "block"
-        } else { document.getElementById("gall_window").style.display = "block" }
+    function donotcopy() {
+        alert("all pictures cannot be copied without permission.");
+        return false;
+    }
+
+    // 총 작품개수 알려주는 펑션
+    function countcontent(obj){
+        var gallist = document.querySelectorAll(".gall");
+        document.getElementById(obj).innerText = gallist.length;
+    }
+
+    // 작품 설명창 보이게, 갤러리와 마우스 상호작용 안되게
+    function showon(){
+        document.getElementById("gallerywindow").style.opacity = "1";
+        var gallist = document.querySelectorAll(".gall");
+        for(var i=0; i<gallist.length; i++){
+            var j = gallist.item(i);
+            j.style.pointerEvents = "none"
+        }
+    }
+
+    // 다시 원래대로, 갤러리와 마우스 상호작용 다시 활성화
+    function showoff(){
+        document.getElementById("gallerywindow").style.opacity = "0"
+        var gallist = document.querySelectorAll(".gall");
+        for(var i=0; i<gallist.length; i++){
+            var j = gallist.item(i);
+            j.style.pointerEvents = "auto"
+        }
     }
 
 </script>
-    <title>Industrial Designer Choi-Jaeho</title>
+    <title>ID Choi-Jaeho. gallery</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <style>@import url("style_index.css");</style>
 </head>
-<body>
 
 <body>
-    <header class="id">
+
+    <!-- 사진을 누르면 나오는 갤러리 창 -->
+    <div id="gallerywindow">
+        <button id="off" onclick="showoff()">X</button>
+        <div id="imagewindow">
+            <iframe id="imageframe" src="idgallery/id_angook.html"
+            marginheight="0" marginwidth="0"></iframe>
+        </div>
+    </div>
+
+    <!-- 헤더 -->
+    <header>
         <a href = "https://hoishere7.github.io/index">Back</a>
-            <table border="0" style="font-size: 12px; float:right;">
-            <tr>
-            <td><a href="https://www.instagram.com/jaeho.id/?hl=ko" title="Instagram Adress">
-            <img id="header" src="img/Instagram.png"> Instagram</a></td>
-            </tr>
-            </table>
+        <a href = "https://www.instagram.com/jaeho.id/?hl=ko">
+        <img id="header" src="img/Instagram.png"> Instagram</a></td>
+        
     </header>
 
-<h2 style="text-align: center;">CONTENTS</h2>
+    
 
-<div class="gall">
-    여기에 사진이 들어갑니다.
-</div>
-<div class="gall">
-    여기에 사진이 들어갑니다.
-</div>
-<div class="gall">
-    <img src="" onclick="$showon()">
-    여기에 사진이 들어갑니다.
+<h1 style="text-align: center;">CONTENTS</h1>
+<p>총 <span id=count onload="countcontent(this)">0</span>개의 프로젝트 전시중</p>
+
+<!-- 갤러리 목록 -->
+<div style="outline:none; background:none; margin:100px auto;">
+    <div class="gall" onclick="showon()">
+        <div class="fadedinfo">
+            안국역 리모델링 프로젝트<br>
+            교내, 2021
+        </div>
+        <img class="gallimage" src="idgallery/img/angook1.jpg">
+    </div>
+    <div class="gall" onclick="showon()">
+        <div class="fadedinfo">
+            스포트용 웨어러블 고글 프로젝트
+            교내, 2021
+        </div>
+        <img class="gallimage" src="idgallery/img/smartgg1.jpg">
+    </div>
+    <div class="gall" onclick="showon()">
+        <div class="fadedinfo">
+            패브릭 제품 프로젝트
+            교내, 2021
+        </div>
+        <img class="gallimage" src="idgallery/img/fabrics1.png">
+    </div>
+    
 </div>
 
-<div id="gall_window">
-    팝업 윈도우
-</div>
 
-<div>
-    하단 사진 플리퍼
-</div>
-
-<div>
-<a href = "https://hoishere7.github.io/id_gallery">contents</a>
-</div>
-
+<!-- 푸터 -->
 <footer>
-contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com / Copyright 2023. Choi-Jaeho. all pictures cannot
-be copied without permission.
+contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com <br>
+Copyright 2023. Choi-Jaeho. all pictures cannot be copied without permission.
 </footer>
 </body>
 
