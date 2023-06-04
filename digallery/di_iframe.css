@@ -1,0 +1,52 @@
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 사진이 출력되는 부분 */
+.frame{
+    width:66%;
+    height:100%;
+    float:left;
+    background-color: black;
+}
+
+/* 설명창 */
+.description{
+    width: 34%;
+    height: 100%;
+    float:right;
+    background-color: ghostwhite;
+}
+
+/* 넘기기 버튼 */
+#flip{
+    position:absolute;
+    /* 앱솔루트: 부모 속성을 기준으로 어디든 배치 가능 */
+    width:20px; 
+    height:100%; 
+    background-color:rgba(255, 255, 255, 0.3);
+    transition: all ease-out 0.2s;
+    border: none;
+}
+
+    #flip:hover{
+        background-color:rgba(255, 255, 255, 0.6);
+        transition: all ease-out 0.2s;
+        cursor: pointer;
+    }
+
+/* 설명창의 제목, 본문, 기타 정보들의 서식 */
+.text_head{
+    font-size: 20px;
+    padding: 10px;
+}
+.text_main{
+    font-size: 8px;
+    padding: 10px;
+}
+.text_foot{
+    position:absolute;
+    font-size: 6px;
+    padding: 10px;
+    bottom: 0%;
+}

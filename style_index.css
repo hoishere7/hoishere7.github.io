@@ -1,58 +1,80 @@
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
 html, body {
 	background-color: #222222;
-	font-family: 'Malgun Gothic';
-	margin: 0px;
-	color:gray
+	margin: 0px; 
+	/* 기본 테두리 삭제 */
+	color:gray;
 }
 
 header {
+	/* 상단 고정 */
 	position:fixed;
-	display: block;
 	width : 100%;
-	height:4%;
+	height: 50px;
 	background-color : black;	
 	color:gray;
-	font-size: 12px;
+	font-size: 15px;
 }
+	/* 헤더 좌측의 뒤로가기 또는 메인으로 가기 */
+	.innerlink{
+		padding-left: 20px;
+		line-height: 50px;
+		float:left;
+	}
 
-img#header {
-	width:12px;
-	height: 12px;
-}
+	/* 헤더 우측의 SNS 숏컷 */
+	.outerlink{
+		padding-right: 20px;
+		line-height: 50px;
+		float:right;
+	}
+
+	/* 헤더에 들어가는 이미지 */
+	img#header {
+		width:14px;
+		height: 14px;
+	}
 
 div {
-	outline: 2px solid darkred;
 	text-align: center;
-	background-color: lightgray;
 }
-
+	/* 인덱스-좌측 화면 */
 	div.index_left {
+		position: relative;
 		width:50%;
-		height:90%;
+		height:92%;
 		float:left;
-		margin: 0 auto;
 	}
 
+	/* 인덱스-우측 화면 */
 	div.index_right {
+		position: relative;
 		width:50%;
-		height:90%;
+		height:92%;
 		float:right;
-		margin: 0 auto;
 	}
 
-	div.main {
-		width:100%;
-		height:90%;
+	/* 메인-디자이너/아티스트 인포 */
+	div#aboutme{
+		font-size: 12px;
+		opacity: 0;
+		height: 0px;
+		transition: all ease 1s;
 	}
 
+	/* 갤러리-썸네일 이미지 공간 */
 	div.gall{
 		display: inline-block;
 		width:400px;
 		height:400px;
 		margin: 20px;
 		border-radius: 20px;
+		cursor: pointer;
 	}
-
+		/* 갤러리-썸네일 마우스 오버 시 보이는 글귀 */
 		.fadedinfo{
 			width:400px;
 			height:400px;
@@ -66,6 +88,7 @@ div {
 		.gall:hover .fadedinfo{
 			opacity: 1;
 		}
+		/* 갤러리-썸네일 이미지 */
 		img.gallimage{
 			object-fit: cover;
 			width: 400px;
@@ -73,7 +96,7 @@ div {
 			border-radius: 20px;
 		}
 		
-
+	/* 갤러리-화면 덮는 팝업 스크린 */
 	div#gallerywindow{
 		position: fixed;
 		width:100%;
@@ -83,6 +106,7 @@ div {
 		opacity: 0;
 		background-color: rgba(0, 0, 0, 0.5);
 	}	
+		/* 갤러리-팝업 스크린 속 아이프레임 위치 */
 		div#imagewindow{
 			width:80%;
 			height:70%;
@@ -91,7 +115,7 @@ div {
 			margin:100px auto;
 			background-color: white;
 		}	
-
+		/* 갤러리-아이프레임 스타일 */
 		iframe {
 			width:100%;
 			height:100%;
@@ -99,27 +123,48 @@ div {
 			border:none;
 		}
 		
-
+/* 푸터-하단 고정, 창 크기 줄여도 따라옴 */
 footer {
+	position: fixed;
+	bottom: 0px;
 	width:100%;
-	height:4%;
-	clear:both;
 	text-align: right;
-	font-size: 12px;
+	font-size: 7px;
 	color : grey;
 	background-color : black;
 }
-	
+	/* 푸터-갤러리 전용, 밑바닥까지 다 내려야 보임 */
+	.gallfoot {
+		position: block;
+		height:6%;
+	}
+
+/* 일반 링크 */
 a {
 	color : darkred;
 	font-style: none;
 	text-decoration: none;
 }
-
 	a:hover{
-		color : white;
+		color : red;
+		transition: all ease 0.4s;
+	}
+	
+	/* 인덱스의 두 링크 */
+	a.indexlink{
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: gray;
 	}
 
+		a.indexlink:hover{
+			color: white;
+			transition: all ease 0.4s;
+		}
+
+
+/* 버튼-팝업 아이프레임 */
 button#off{
 	width: 50px;
 	height: 50px;

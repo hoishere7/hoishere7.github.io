@@ -1,0 +1,68 @@
+<!DOTYPE html>
+<html>
+<head>
+    <!-- 나눔고딕 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <title>DI Choi-Jaeho. main&info</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <style>@import url("style_index.css");</style>
+
+    <script>
+        var isopened = false;
+
+        // 어바웃미가 열려있으면 닫고, 닫혀있으면 연다
+        function openinfo(){
+            if(isopened){
+                document.getElementById("aboutme").style.opacity = 0;
+                document.getElementById("aboutme").style.height = "0px";
+                isopened = false;
+            } else {
+                document.getElementById("aboutme").style.opacity = 1;
+                document.getElementById("aboutme").style.height = "300px";
+                isopened = true;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="innerlink">
+            <a href = "https://hoishere7.github.io/index">BACK to MAIN</a>
+        </div>
+        <div class="outerlink">
+            <a href = "https://www.instagram.com/jaeho.78/?hl=ko">
+                <img id="header" src="img/Instagram.png"> Instagram</a>
+        </div>
+    </header>
+
+
+<div style="text-align: center; height: 30%; padding: 10%; font-size: 20px;">
+    <h1>Illustration</h1>
+        <p style="cursor: pointer;" onclick="openinfo()">
+            저에 대해서
+        </p>
+        <div id="aboutme">
+            <p>
+                좋아했던 것을 그립니다.
+            </p>
+            <p>
+                이 곳은 취미 페이지입니다. 포토샵과 클립스튜디오로 작업합니다.
+            </p>
+        </div>
+        <a href = "https://hoishere7.github.io/di_gallery">
+            갤러리로
+        </a>
+</div>
+
+<footer>
+    contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com <br>
+    Copyright 2023. Choi-Jaeho. all pictures cannot be copied without permission.<br>
+    이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다.
+</footer>
+</body>
+
+</html>

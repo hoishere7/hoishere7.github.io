@@ -1,25 +1,37 @@
 <!DOTYPE html>
 <html>
 <head>
+    <!-- 나눔고딕 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    
+    <title>ID Choi-Jaeho. gallery</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <style>@import url("style_index.css");</style>
+
 <script>
 // 사진은 레파지토리에 올려서 링크걸면 바로 보인다.
     
+    // div에 우클릭 금지
     document.oncontextmenu = donotcopy;
-
     function donotcopy() {
         alert("all pictures cannot be copied without permission.");
         return false;
     }
 
-    // 총 작품개수 알려주는 펑션
-    function countcontent(obj){
-        var gallist = document.querySelectorAll(".gall");
-        document.getElementById(obj).innerText = gallist.length;
-    }
+    // 갤러리가 추가될 때마다 여기에 링크도 걸어줘야 함
+    // 헷갈리지 않게 세줄씩
+    var list = 
+    ["idgallery/id_angook.html", "idgallery/id_smartgg.html", "idgallery/id_fabrics.html",
+     "idgallery/id_nshowtie.html", "idgallery/id_shyhead.html", "idgallery/id_huddly.html"
+    ]
 
     // 작품 설명창 보이게, 갤러리와 마우스 상호작용 안되게
-    function showon(){
+    function showon(n){
         document.getElementById("gallerywindow").style.opacity = "1";
+        document.getElementById("imageframe").src = list[n];
+
         var gallist = document.querySelectorAll(".gall");
         for(var i=0; i<gallist.length; i++){
             var j = gallist.item(i);
@@ -38,66 +50,94 @@
     }
 
 </script>
-    <title>ID Choi-Jaeho. gallery</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <style>@import url("style_index.css");</style>
 </head>
 
 <body>
 
     <!-- 사진을 누르면 나오는 갤러리 창 -->
+    <!-- src는 비워두고 함수로 채운다 -->
     <div id="gallerywindow">
         <button id="off" onclick="showoff()">X</button>
         <div id="imagewindow">
-            <iframe id="imageframe" src="idgallery/id_angook.html"
+            <iframe id="imageframe" src=""
             marginheight="0" marginwidth="0"></iframe>
         </div>
     </div>
 
     <!-- 헤더 -->
     <header>
-        <a href = "https://hoishere7.github.io/index">Back</a>
-        <a href = "https://www.instagram.com/jaeho.id/?hl=ko">
-        <img id="header" src="img/Instagram.png"> Instagram</a></td>
-        
+        <div class="innerlink">
+            <a href = "https://hoishere7.github.io/index">BACK to MAIN</a>
+               /   
+            <a href = "https://hoishere7.github.io/id_main">BACK to Info</a>
+        </div>
+        <div class="outerlink">
+            <a href = "https://www.instagram.com/jaeho.id/?hl=ko">
+                <img id="header" src="img/Instagram.png"> Instagram</a>
+        </div>
     </header>
 
     
+<div style="text-align: center; height: 30%; padding: 10%;">
+    <h1>CONTENTS</h1>
+    <script>
+        document.write(list.length + " products uploaded.");
+    </script>
+</div>
 
-<h1 style="text-align: center;">CONTENTS</h1>
-<p>총 <span id=count onload="countcontent(this)">0</span>개의 프로젝트 전시중</p>
 
 <!-- 갤러리 목록 -->
 <div style="outline:none; background:none; margin:100px auto;">
-    <div class="gall" onclick="showon()">
+    <div class="gall" onclick="showon(0)">
         <div class="fadedinfo">
             안국역 리모델링 프로젝트<br>
             교내, 2021
         </div>
-        <img class="gallimage" src="idgallery/img/angook1.jpg">
+        <img class="gallimage" src="idgallery/img/angook0.png">
     </div>
-    <div class="gall" onclick="showon()">
+    <div class="gall" onclick="showon(1)">
         <div class="fadedinfo">
-            스포트용 웨어러블 고글 프로젝트
+            스포트용 웨어러블 고글 프로젝트<br>
             교내, 2021
         </div>
-        <img class="gallimage" src="idgallery/img/smartgg1.jpg">
+        <img class="gallimage" src="idgallery/img/smartgg0.jpg">
     </div>
-    <div class="gall" onclick="showon()">
+    <div class="gall" onclick="showon(2)">
         <div class="fadedinfo">
-            패브릭 제품 프로젝트
+            패브릭 제품 프로젝트<br>
             교내, 2021
         </div>
-        <img class="gallimage" src="idgallery/img/fabrics1.png">
+        <img class="gallimage" src="idgallery/img/fabrics0.png">
     </div>
-    
+    <div class="gall" onclick="showon(3)">
+        <div class="fadedinfo">
+            NO-SHOW TIE<br>
+            교내, 2020
+        </div>
+        <img class="gallimage" src="idgallery/img/nshowtie0.png">
+    </div>
+    <div class="gall" onclick="showon(4)">
+        <div class="fadedinfo">
+            아트토이 제작 연구<br>
+            교내, 2021
+        </div>
+        <img class="gallimage" src="idgallery/img/shyhead0.png">
+    </div>
+    <div class="gall" onclick="showon(5)">
+        <div class="fadedinfo">
+            HUDDLY<br>
+            교내, 2021
+        </div>
+        <img class="gallimage" src="idgallery/img/huddly0.png">
+    </div>
 </div>
 
 
 <!-- 푸터 -->
-<footer>
-contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com <br>
-Copyright 2023. Choi-Jaeho. all pictures cannot be copied without permission.
+<footer class="gallfoot">
+    contact me : 010-6455-XXXX / zmsdkdlwogh@naver.com <br>
+    Copyright 2023. Choi-Jaeho. all pictures cannot be copied without permission.<br>
+    이 페이지에는 네이버에서 제공한 나눔글꼴이 적용되어 있습니다.
 </footer>
 </body>
 
