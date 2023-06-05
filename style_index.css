@@ -57,13 +57,13 @@ div {
 		float:right;
 	}
 
-	/* 메인-디자이너/아티스트 인포 */
-	div#aboutme{
-		font-size: 12px;
-		opacity: 0;
-		height: 0px;
-		transition: all ease 1s;
-	}
+		/* 메인-디자이너/아티스트 인포 */
+		div#aboutme{
+			font-size: 12px;
+			opacity: 0;
+			height: 0px;
+			transition: all ease 1s;
+		}
 
 	/* 갤러리-썸네일 이미지 공간 */
 	div.gall{
@@ -111,7 +111,6 @@ div {
 			width:80%;
 			height:70%;
 			border-radius: 10px;
-			outline:none;
 			margin:100px auto;
 			background-color: white;
 		}	
@@ -133,11 +132,6 @@ footer {
 	color : grey;
 	background-color : black;
 }
-	/* 푸터-갤러리 전용, 밑바닥까지 다 내려야 보임 */
-	.gallfoot {
-		position: block;
-		height:6%;
-	}
 
 /* 일반 링크 */
 a {
@@ -166,7 +160,7 @@ a {
 
 /* 버튼-팝업 아이프레임 */
 button#off{
-	width: 50px;
+	width: 50px; 
 	height: 50px;
 	float:right;
 	margin: 30px;
