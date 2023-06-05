@@ -145,14 +145,14 @@ a {
 	}
 	
 	/* 인덱스의 두 링크 */
-	a.indexlink{
+	a#index_link{
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		color: gray;
 	}
 
-		a.indexlink:hover{
+		a#index_link:hover{
 			color: white;
 			transition: all ease 0.4s;
 		}
